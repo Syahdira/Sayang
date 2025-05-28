@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maaf, Flora ❤️ dari Syahdira</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #4b2e2e;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .container {
+    background-color: rgba(255, 245, 245, 0.9);
+    max-width: 600px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.7);
+    transition: filter 1s ease;
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    font-family: 'Brush Script MT', cursive;
+    color: #b03060;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+  }
+  #message {
+    text-align: left;
+    white-space: pre-line;
+    line-height: 1.5;
+    font-size: 16px;
+    min-height: 380px;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards 1s;
+  }
+  .buttons {
+    margin-top: 25px;
+    display: none;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: #b03060;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #d94f7c;
+  }
+  #btnNggak {
+    background-color: #777;
+    position: absolute;
+  }
+  #thankYouMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #b03060;
+    font-weight: bold;
+    display: none;
+    z-index: 3;
+    position: relative;
+  }
+  .rain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .drop {
+    background: rgba(255, 255, 255, 0.5);
+    width: 2px;
+    height: 15px;
+    position: absolute;
+    animation: fall 1s linear infinite;
+  }
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body onclick="initAudio()">
+
+<div class="rain" id="rain"></div>
+
+<div class="container" id="containerBox">
+  <h1>Untuk Flora, Sayangku ❤️</h1>
+  <p id="message"></p>
+  <div id="thankYouMessage">Terima kasih sudah memaafkan, sayangku 💖</div>
+</div>
+
+<div class="buttons" id="buttonArea">
+  <button id="btnMaafin">Maafin</button>
+  <button id="btnNggak">Nggak Mau Maafin</button>
+</div>
+
+<audio id="musik" src="musik.mp3" loop></audio>
+<audio id="typeSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c91d8b90f.mp3?filename=keyboard-typing-2-102121.mp3"></audio>
+
+<script>
+  const fullText = `Sayang, aku minta maaf dari lubuk hati yang paling dalam…
+Aku nggak tahu harus mulai dari mana, tapi yang jelas aku sadar banget kalau tadi aku bikin kamu kecewa… lebih dari sekadar kecewa, bahkan sampai nangis. Dan itu semua karena salahku—karena ucapan yang nggak aku pikirin baik-baik, yang akhirnya bikin kamu ngerasa kayak kamu cuma seseorang yang ‘biasa’ dalam hidup aku. Waktu aku bilang “pulang sama adek” ke orang, jujur, aku nggak pernah punya niat buat ngecilin arti kamu di hidupku. Kata “adek” itu sering aku pake sebagai panggilan sayang—buat kamu...
+
+Aku bisa bayangin rasanya ada di posisi kamu. Rasanya digantung antara “sayang” atau “nggak serius”, antara “dekat” tapi nggak diakui. Dan itu pasti nyakitin. Aku ngerti kenapa kamu ngerasa kayak gitu. Dan aku salah… karena aku yang bikin kamu ragu atas posisi kamu di hati aku.
+
+Tapi, dengerin ini baik-baik ya, sayang… Kamu itu bukan cuma sekadar “adek” dalam ucapan. Kamu itu segalanya buat aku. Kamu tempat aku pulang, tempat aku cerita, tempat aku nemuin ketenangan yang nggak pernah aku temuin di orang lain. Kamu yang selalu ada buat aku, yang sabar sama keras kepalaku, yang ngerti meskipun aku nggak banyak ngomong.
+
+Kalau ada hal yang paling aku takutin sekarang, itu bukan kemarahan kamu. Tapi kehilangan kamu karena kesalahanku sendiri. Aku sadar, hubungan itu bukan cuma tentang cinta, tapi juga tentang rasa aman, penghargaan, dan pengakuan. Dan aku gagal nunjukin itu hari ini. Tapi aku nggak mau gagal terus-terusan. Aku pengen benerin semuanya. Aku pengen kamu tahu, aku serius. Bukan cuma sebagai pacar, tapi sebagai seseorang yang mau kamu lihat di masa depan, berdiri di samping kamu, dan bilang ke semua orang, “Ini ...
+
+Maaf ya, aku bikin kamu ngerasa kayak kamu nggak cukup penting. Padahal kamu itu sangat penting. Lebih dari apa pun. Aku janji, aku akan lebih hati-hati lagi, lebih terbuka, dan lebih berani nunjukin kalau kamu itu adalah bagian dari hidup aku yang nggak bisa diganti.
+
+Kalau kamu butuh waktu, aku akan tunggu. Tapi aku nggak akan berhenti nunjukin rasa sayangku ke kamu. Aku bakal terus buktiin, bahwa kamu bukan sekadar “adek” di mata orang lain—tapi kamu adalah satu-satunya yang aku cinta, aku jaga, dan aku syukuri setiap hari.
+
+Sekali lagi, maaf ya, sayang…
+Terima kasih karena kamu masih mau dengerin aku.
+Aku sayang kamu. Selalu. 🤍
+Love you more sayang🤍`;
+
+  const messageEl = document.getElementById('message');
+  const buttonArea = document.getElementById('buttonArea');
+  const containerBox = document.getElementById('containerBox');
+  const typeSound = document.getElementById('typeSound');
+  const musik = document.getElementById('musik');
+  let index = 0;
+
+  function initAudio() {
+    musik.play();
+    typeSound.play().then(() => typeSound.pause());
+    document.body.onclick = null; // hanya butuh satu kali klik
+  }
+
+  function typeWriter() {
+    if (index < fullText.length) {
+      messageEl.textContent += fullText.charAt(index);
+      try {
+        typeSound.currentTime = 0;
+        typeSound.play();
+      } catch(e){}
+      index++;
+      setTimeout(typeWriter, 40);
+    } else {
+      buttonArea.style.display = 'flex';
+      messageEl.style.filter = 'blur(2px)';
+    }
+  }
+
+  typeWriter();
+
+  const btnNggak = document.getElementById('btnNggak');
+  const btnMaafin = document.getElementById('btnMaafin');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+
+  btnNggak.addEventListener('mouseenter', () => {
+    const maxX = window.innerWidth - btnNggak.offsetWidth;
+    const maxY = window.innerHeight - btnNggak.offsetHeight;
+    const randX = Math.floor(Math.random() * maxX);
+    const randY = Math.floor(Math.random() * maxY);
+    btnNggak.style.left = randX + 'px';
+    btnNggak.style.top = randY + 'px';
+  });
+
+  btnMaafin.addEventListener('click', () => {
+    thankYouMessage.style.display = 'block';
+    btnMaafin.disabled = true;
+    btnNggak.disabled = true;
+  });
+
+  const rainContainer = document.getElementById('rain');
+  for (let i = 0; i < 100; i++) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+    drop.style.left = Math.random() * 100 + 'vw';
+    drop.style.animationDuration = 0.5 + Math.random() + 's';
+    drop.style.opacity = Math.random();
+    rainContainer.appendChild(drop);
+  }
+</script>
+
+</body>
+</html>
